@@ -1,0 +1,21 @@
+# Simple CTL Properties Test
+p
+q
+p & q
+p | q
+!p
+EF p
+AG q
+AF ready
+EG stable
+E(p U q)
+A(init U ready)
+AG (p -> AF q)
+EF (p & q)
+AG (request -> AF grant)
+EG p | AF q
+
+(A((!(a20)) W (((a25)) | ((a21)))))
+(AG(((a1)) -> ((A((!(a6)) W ((a3)))))))
+(A((!(a5)) W (((a6)) | ((a4)))))
+(A((!(a21)) W (((a3)) | ((a17)))))

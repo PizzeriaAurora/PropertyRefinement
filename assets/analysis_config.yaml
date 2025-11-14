@@ -1,0 +1,38 @@
+# Analysis configuration (default)
+# Set `input_folder` to the folder containing subfolders with `analysis_results.csv` files.
+# Example: if your results are under `results/2019/analysis_results.csv`, point to `results`.
+
+
+
+# Output directory where analysis will be written
+output_dir: analysis
+
+# Subfolder inside the output directory for summary files
+summary_folder: summary
+
+# Percentages of reduction for which to find representative benchmarks
+representatives: [25, 50, 75, 90]
+
+# Number of representatives to find for each percentage
+num_representatives: 5
+
+# If true, only create the summary file (don't generate plots/other analysis)
+only_summary: false
+
+create_output_folder_per_graph_name : True
+
+
+# input_folder can be a single path or a list of paths or a dictionary. Examples (uncomment and edit when needed), If a list, names in the graphs are automatically 0,.1, 2, 3, 4:
+input_folder:
+    #LI Optimized (S): ./results_language_inclusion_RCTLC_p
+    LI Optimized (S): ./results/language_inclusion_RCTLC_s
+    #Simulation (S): ./results_simulation_RCTLC_p
+    #LI Optimized (P): ./results_language_inclusion_RCTLC_p
+    #Simulation (P): ./results_simulation_RCTLC_p
+    #LI Naive (S): ./results_language_inclusion_RCTLC_nto_s
+
+benchmark_folder: ./assets/benchmark/Dataset/Properties
+
+
+# folder with formula info
+formula_info_folder: ./assets/formula_info

@@ -1,0 +1,4 @@
+counter != 0
+AG(p)
+EF(q -> r)
+AF(x > 5)

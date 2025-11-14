@@ -1,0 +1,4 @@
+AG(p)
+AG(q)
+EF(AG(p))
+EF(AG(q))

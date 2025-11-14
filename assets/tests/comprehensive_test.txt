@@ -1,0 +1,41 @@
+# Comprehensive CTL Test Suite
+# Basic atomic propositions
+ready
+waiting
+error
+critical
+
+# Boolean combinations 
+ready & !error
+waiting | critical
+ready -> !error
+!(error & critical)
+
+# Simple temporal properties
+EF ready
+AG !error
+AF critical
+EG waiting
+
+# Until operators
+E(waiting U ready)
+A(ready U critical)
+
+# Complex temporal formulas
+AG (ready -> AF critical)
+EF (ready & !error)
+AG (waiting -> EF ready)
+AF (EG ready | EF error)
+
+# Nested properties
+AG (waiting -> A(waiting U (ready | critical)))
+EF (ready & AG !error)
+AF (ready & EG !critical)
+
+# Properties that should form refinement chains
+p
+p & q
+p & q & r
+q
+q | r
+true

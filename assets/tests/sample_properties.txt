@@ -1,0 +1,97 @@
+# Sample CTL Properties for Testing
+# This file demonstrates various CTL formulas that can be analyzed
+
+# Basic atomic propositions (Class 1)
+p
+q
+r
+
+# Simple boolean combinations (Class 1)
+p & q
+p | q
+p -> q
+!p
+!(p & q)
+
+# Complex boolean formulas (Class 1)
+(p & q) | r
+p & (q | r)
+(p -> q) & (q -> r)
+p -> (q & r)
+
+# Basic temporal operators (Class 2)  
+EF ready
+AF ready
+EG ready
+AG ready
+
+# Temporal with boolean combinations (Class 2)
+EF (ready & !error)
+AG (ready -> !error)
+AF (ready | error)
+EG (ready & safe)
+
+# Until operators (Class 2)
+E(init U ready)
+A(init U ready)
+E(trying U critical)
+A(trying U critical)
+
+# Complex temporal formulas (Class 2)
+AG (request -> AF grant)
+AG (trying -> AF critical)
+AG (critical -> EF !critical)
+EF (p & AG q)
+AF (EG p | EF q)
+
+# Time-bounded operators (Class 3)
+EF[1,5] ready
+AG[0,10] safe
+AF[2,8] response
+EG[0,15] stable
+
+# Time-bounded with complex formulas (Class 3)
+AG[0,5] (request -> AF[1,3] grant)
+EF[2,10] (ready & !error)
+AG[0,20] (trying -> AF[1,5] critical)
+
+# Arithmetic comparisons (Class 4)
+x > 0
+y <= 10
+t == 5
+counter != 0
+
+# Temporal with arithmetic (Class 4)
+AG (x > 0 -> AF (x == 0))
+EF (counter > 10)
+AG (t <= 100)
+AF (y >= target)
+
+# Complex mixed formulas (Class 4)
+AG ((x > 0 & ready) -> AF (x == 0 | error))
+EF (counter > 5 & ready & !error)
+AG (trying & x > 0 -> AF[1,10] (critical & x <= 0))
+
+# Refinement examples
+# These should show clear refinement relationships:
+
+# Class 5: Refinement chain AG -> AF -> EF
+AG safe
+AF safe  
+EF safe
+
+# Class 6: Conjunction refinements
+p & q & r
+p & q
+p
+
+# Class 7: Temporal refinements with same atoms
+AG (p -> q)
+AF (p -> q)
+EF (p -> q)
+
+# Class 8: Complex refinement chain
+AG (ready & safe -> AF response)
+AG (ready -> AF response)
+AF (ready -> AF response)
+EF (ready -> AF response)

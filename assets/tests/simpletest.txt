@@ -1,0 +1,10 @@
+EF p 
+EG(d) 
+EF(d)
+EF(e & c) 
+EF(e) 
+EF(c)
+(AF p) 
+(AG q) 
+AG(EF(t)) 
+AF(EF(t))
