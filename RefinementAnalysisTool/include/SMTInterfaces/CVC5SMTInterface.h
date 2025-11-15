@@ -1,6 +1,6 @@
 #ifndef CVC5SMTINTERFACE_H
 #define CVC5SMTINTERFACE_H
-
+#ifdef USE_CVC5
 #include "../SMTInterface.h"
 #include <cvc5/cvc5.h>
 #include <memory>
@@ -51,5 +51,5 @@ private:
 };
 
 } // namespace ctl
-
+#endif // USE_CVC5
 #endif // CVC5SMTINTERFACE_H
