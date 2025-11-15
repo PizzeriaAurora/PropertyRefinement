@@ -1,6 +1,6 @@
 #ifndef Z3SMTINTERFACE_H
 #define Z3SMTINTERFACE_H
-
+#ifdef USE_Z3
 #include "../SMTInterface.h"
 #include <z3++.h>
 #include <memory>
@@ -52,5 +52,5 @@ private:
 };
 
 } // namespace ctl
-
+#endif // USE_Z3
 #endif // Z3SMTINTERFACE_H
