@@ -6,6 +6,8 @@ sudo apt install build-essential cmake libz3-dev libstdc++6
 
 # if not already present, clone CTL sat and build it
 if [ ! -d "assets/extern/CTLSAT" ]; then
+    # create extern directory if it does not exist
+    mkdir -p assets/extern/
     cd assets/extern/
     git clone https://github.com/nicolaprezza/CTLSAT.git
     cd CTLSAT || { echo "Failed to enter CTLSAT directory."; exit 1; }
